@@ -1,53 +1,78 @@
 import formatDate from 'date-fns/format';
 import { byString } from './';
 
+/**
+ * Possible properties that need to be global, or we need to determine if props are only being
+ * passed due to 'prop drilling' or are they necessary props for 'that' component.
+ *
+ * - columnDef
+ * - 
+ */
+
 export default class DataManager {
+  /**
+   * These props/flags seem to only be used in
+   * material-table.js
+   */
   applyFilters = false;
   applySearch = false;
   applySort = false;
-  currentPage = 0;
   detailPanelType = 'multiple';
-  lastDetailPanelRow = undefined;
   lastEditingRow = undefined;
-  orderBy = -1;
-  orderDirection = '';
-  pageSize = 5;
-  paging = true;
   parentFunc = null;
-  searchText = '';
-  selectedCount = 0;
   treefiedDataLength = 0;
-  treeDataMaxLevel = 0;
   groupedDataLength = 0;
   defaultExpanded = false;
-  bulkEditOpen = false;
   bulkEditChangedRows = {};
-
-  data = [];
-  columns = [];
-
-  filteredData = [];
-  searchedData = [];
   groupedData = [];
   treefiedData = [];
+
+  /**
+   * !! Only used in this file
+   * May either need to be part of global state
+   * or removed entirely
+   */
+  lastDetailPanelRow = undefined;
+  filteredData = [];
+  searchedData = [];
   sortedData = [];
   pagedData = [];
-  renderData = [];
-
   filtered = false;
   searched = false;
   grouped = false;
   treefied = false;
   sorted = false;
   paged = false;
-
   rootGroupsIndex = {};
+
+  /**
+   * These props are used in more than one
+   * file and should prob be part of some
+   * 'global' state or context.
+   */
+  // These should def be global
+  data = [];
+  columns = [];
+  // used in: 'material-table.js', MTableHeader
+  orderBy = -1;
+  orderDirection = '';
+  selectedCount = 0;
+  // Used in: 'material-table.js', MTableBody
+  bulkEditOpen = false;
+  currentPage = 0;
+  pageSize = 5;
+  paging = true;
+  // Used in: 'material-table.js', MTableToolbar
+  searchText = '';
+  // Used in: 'material-table.js', MTableBody, MTableBodyRow, MTableHeader
+  treeDataMaxLevel = 0;
+  // Used in many files (4+)
+  renderData = [];
 
   constructor() {}
 
   setData(data) {
     this.selectedCount = 0;
-
     this.data = data.map((row, index) => {
       row.tableData = { ...row.tableData, id: index };
       if (row.tableData.checked) {

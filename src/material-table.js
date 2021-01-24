@@ -12,7 +12,6 @@ import { debounce } from 'debounce';
 import equal from 'fast-deep-equal';
 import { withStyles } from '@material-ui/core';
 import * as CommonValues from './utils/common-values';
-
 /* eslint-enable no-unused-vars */
 
 export default class MaterialTable extends React.Component {
