@@ -2,7 +2,7 @@ import MTableFilterRow from './index';
 
 export const getLocalizationData = (localization) => ({
   ...MTableFilterRow.defaultProps.localization,
-  ...localization,
+  ...localization
 });
 
 export const getLocalizedFilterPlaceHolder = (columnDef, localization) => {

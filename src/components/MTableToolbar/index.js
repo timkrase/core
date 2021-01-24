@@ -297,11 +297,11 @@ export function MTableToolbar(props) {
       props.selectedRows &&
       props.selectedRows.length > 0
         ? typeof localization.nRowsSelected === 'function'
-          ? localization.nRowsSelected(props.selectedRows.length)
-          : localization.nRowsSelected.replace('{0}', props.selectedRows.length)
+            ? localization.nRowsSelected(props.selectedRows.length)
+            : localization.nRowsSelected.replace('{0}', props.selectedRows.length)
         : props.showTitle
-        ? props.title
-        : null;
+          ? props.title
+          : null;
     return (
       <Toolbar
         className={classNames(classes.root, {

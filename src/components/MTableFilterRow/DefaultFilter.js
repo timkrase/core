@@ -7,7 +7,7 @@ export default function DefaultFilter({
   icons,
   localization,
   hideFilterIcons,
-  onFilterChanged,
+  onFilterChanged
 }) {
   const _localization = getLocalizationData(localization);
   const FilterIcon = icons.Filter;
@@ -32,7 +32,7 @@ export default function DefaultFilter({
                     <FilterIcon />
                   </Tooltip>
                 </InputAdornment>
-              ),
+              )
             }
       }
     />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-let renders = 0;
+const renders = 0;
 
 export default function TextField(props) {
   return (

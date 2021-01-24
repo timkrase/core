@@ -6,7 +6,7 @@ import { byString } from './';
  * passed due to 'prop drilling' or are they necessary props for 'that' component.
  *
  * - columnDef
- * - 
+ * -
  */
 
 export default class DataManager {
@@ -1013,7 +1013,7 @@ export default class DataManager {
       this.sortedData = sortGroups(this.sortedData, groups[0]);
 
       // If you have nested grouped rows and wanted to select one of those row
-      // there was an issue. 
+      // there was an issue.
       // -https://github.com/material-table-core/core/pull/74
       // -https://github.com/mbrn/material-table/issues/2258
       // -https://github.com/mbrn/material-table/issues/2249

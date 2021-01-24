@@ -5,13 +5,13 @@ import {
   DatePicker,
   DateTimePicker,
   MuiPickersUtilsProvider,
-  TimePicker,
+  TimePicker
 } from '@material-ui/pickers';
 
 export default function DateFilter({
   columnDef,
   onFilterChanged,
-  localization,
+  localization
 }) {
   const onDateInputChange = (date) =>
     onFilterChanged(columnDef.tableData.id, date);
@@ -20,7 +20,7 @@ export default function DateFilter({
     value: columnDef.tableData.filterValue || null,
     onChange: onDateInputChange,
     placeholder: getLocalizedFilterPlaceHolder(columnDef),
-    clearable: true,
+    clearable: true
   };
 
   let dateInputElement = null;

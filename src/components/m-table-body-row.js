@@ -467,7 +467,7 @@ export default class MTableBodyRow extends React.Component {
                 {this.props.data.tableData.showDetailPanel(this.props.data)}
               </TableCell>
             </TableRow>
-          )}
+        )}
         {this.props.data.tableData.childRows &&
           this.props.data.tableData.isTreeExpanded &&
           this.props.data.tableData.childRows.map((data, index) => {

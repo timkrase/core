@@ -16,8 +16,8 @@ export default function MTableCell(props) {
     props.columnDef.align !== undefined
       ? props.columnDef.align
       : ['numeric', 'currency'].indexOf(props.columnDef.type) !== -1
-      ? 'right'
-      : 'left';
+          ? 'right'
+          : 'left';
 
   let renderValue = getRenderValue(props);
 

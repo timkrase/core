@@ -252,7 +252,7 @@ class MTableBody extends React.Component {
               getFieldValue={this.props.getFieldValue}
               scrollWidth={this.props.scrollWidth}
             />
-          )}
+        )}
 
         {groups.length > 0
           ? this.renderGroupedRows(groups, renderData)

@@ -144,14 +144,14 @@ export function MTableHeader(props) {
                   columnDef.tableData.id !== props.orderBy
                     ? 'asc'
                     : props.orderDirection === 'asc'
-                    ? 'desc'
-                    : props.orderDirection === 'desc' && props.thirdSortClick
-                    ? ''
-                    : props.orderDirection === 'desc' && !props.thirdSortClick
-                    ? 'asc'
-                    : props.orderDirection === ''
-                    ? 'asc'
-                    : 'desc';
+                      ? 'desc'
+                      : props.orderDirection === 'desc' && props.thirdSortClick
+                        ? ''
+                        : props.orderDirection === 'desc' && !props.thirdSortClick
+                          ? 'asc'
+                          : props.orderDirection === ''
+                            ? 'asc'
+                            : 'desc';
                 props.onOrderChange(columnDef.tableData.id, orderDirection);
               }}
             >
@@ -194,8 +194,8 @@ export function MTableHeader(props) {
           columnDef.align !== undefined
             ? columnDef.align
             : ['numeric', 'currency'].indexOf(columnDef.type) !== -1
-            ? 'right'
-            : 'left';
+                ? 'right'
+                : 'left';
         return (
           <TableCell
             key={columnDef.tableData.id}
