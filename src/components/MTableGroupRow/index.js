@@ -76,6 +76,7 @@ function MTableGroupRow(props) {
             return (
               <props.components.Row
                 actions={props.actions}
+                actionsColumnWdith={props.actionsColumnWidth}
                 key={index}
                 columns={props.columns}
                 components={props.components}
@@ -168,6 +169,7 @@ MTableGroupRow.defaultProps = {
 
 MTableGroupRow.propTypes = {
   actions: PropTypes.array,
+  actionsColumnWidth: PropTypes.number.isRequired,
   columns: PropTypes.arrayOf(PropTypes.object),
   components: PropTypes.object,
   detailPanel: PropTypes.oneOfType([

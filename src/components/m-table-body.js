@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TableBody, TableCell, TableRow } from '@material-ui/core';
+import * as CommonValues from '../utils/common-values';
 
 class MTableBody extends React.Component {
   renderEmpty(emptyRowCount, renderData) {
@@ -17,12 +18,7 @@ class MTableBody extends React.Component {
       if (this.props.options.selection) {
         addColumn++;
       }
-      if (
-        this.props.actions &&
-        this.props.actions.filter(
-          (a) => a.position === 'row' || typeof a === 'function'
-        ).length > 0
-      ) {
+      if (CommonValues.hasAtLeastOneRowAction(this.props)) {
         addColumn++;
       }
       if (this.props.hasDetailPanel) {
@@ -104,6 +100,7 @@ class MTableBody extends React.Component {
       } else {
         return (
           <this.props.components.Row
+            actionsColumnWidth={this.props.actionsColumnWidth}
             components={this.props.components}
             icons={this.props.icons}
             data={data}
@@ -233,11 +230,7 @@ class MTableBody extends React.Component {
           <this.props.components.FilterRow
             columns={columns}
             icons={this.props.icons}
-            hasActions={
-              this.props.actions.filter(
-                (a) => a.position === 'row' || typeof a === 'function'
-              ).length > 0
-            }
+            hasActions={CommonValues.hasAtLeastOneRowAction(this.props)}
             actionsColumnIndex={this.props.options.actionsColumnIndex}
             onFilterChanged={this.props.onFilterChanged}
             selection={this.props.options.selection}
@@ -293,6 +286,7 @@ MTableBody.defaultProps = {
 
 MTableBody.propTypes = {
   actions: PropTypes.array,
+  actionsColumnWidth: PropTypes.number.isRequired,
   components: PropTypes.object.isRequired,
   columns: PropTypes.array.isRequired,
   currentPage: PropTypes.number,

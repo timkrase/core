@@ -82,7 +82,8 @@ export default class MTableBodyRow extends React.Component {
   renderActions() {
     const size = CommonValues.elementSize(this.props);
     const actions = CommonValues.rowActions(this.props);
-    const width = actions.length * CommonValues.baseIconSize(this.props);
+    const width = this.props.actionsColumnWidth;
+
     return (
       <TableCell
         size={size}
@@ -360,12 +361,7 @@ export default class MTableBodyRow extends React.Component {
     if (this.props.options.selection) {
       renderColumns.splice(0, 0, this.renderSelectionColumn());
     }
-    if (
-      this.props.actions &&
-      this.props.actions.filter(
-        (a) => a.position === 'row' || typeof a === 'function'
-      ).length > 0
-    ) {
+    if (CommonValues.hasAtLeastOneRowAction(this.props)) {
       if (this.props.options.actionsColumnIndex === -1) {
         renderColumns.push(this.renderActions());
       } else if (this.props.options.actionsColumnIndex >= 0) {
@@ -534,6 +530,7 @@ MTableBodyRow.defaultProps = {
 
 MTableBodyRow.propTypes = {
   actions: PropTypes.array,
+  actionsColumnWidth: PropTypes.number.isRequired,
   icons: PropTypes.any.isRequired,
   index: PropTypes.number.isRequired,
   data: PropTypes.object.isRequired,

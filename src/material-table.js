@@ -315,6 +315,10 @@ export default class MaterialTable extends React.Component {
       }
     }
 
+    calculatedProps.actionsColumnWidth = CommonValues.actionsColumnWidth(
+      calculatedProps
+    );
+
     return calculatedProps;
   }
 
@@ -831,6 +835,7 @@ export default class MaterialTable extends React.Component {
       {props.options.header && (
         <props.components.Header
           actions={props.actions}
+          actionColumnWdith={props.actionColumnWidth}
           localization={{
             ...MaterialTable.defaultProps.localization.header,
             ...this.props.localization.header
@@ -852,10 +857,7 @@ export default class MaterialTable extends React.Component {
           hasDetailPanel={!!props.detailPanel}
           detailPanelColumnAlignment={props.options.detailPanelColumnAlignment}
           showActionsColumn={
-            props.actions &&
-            props.actions.filter(
-              (a) => a.position === 'row' || typeof a === 'function'
-            ).length > 0
+            props.actions && CommonValues.rowActions(props).length > 0
           }
           showSelectAllCheckbox={props.options.showSelectAllCheckbox}
           orderBy={this.state.orderBy}
@@ -876,6 +878,7 @@ export default class MaterialTable extends React.Component {
       )}
       <props.components.Body
         actions={props.actions}
+        actionsColumnWidth={props.actionsColumnWidth}
         components={props.components}
         icons={props.icons}
         renderData={this.state.renderData}

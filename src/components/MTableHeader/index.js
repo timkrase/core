@@ -60,7 +60,7 @@ export function MTableHeader(props) {
       ...MTableHeader.defaultProps.localization,
       ...props.localization
     };
-    const width = CommonValues.actionsColumnWidth(props);
+    const width = props.actionsColumnWidth;
     return (
       <TableCell
         key="key-actions-column"

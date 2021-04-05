@@ -29,6 +29,17 @@ function MTableAction(props) {
 
     const disabled = action.disabled || props.disabled;
 
+    if (Array.isArray(props.data) && action.position === 'row') {
+      return null;
+    }
+
+    if (
+      !Array.isArray(props.data) &&
+      ['toolbar', 'toolbarOnSelect'].includes(action.position)
+    ) {
+      return null;
+    }
+
     const handleOnClick = (event) => {
       if (action.onClick) {
         action.onClick(event, props.data);
