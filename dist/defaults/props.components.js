@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = void 0;
+exports["default"] = void 0;
 
-var _core = require('@material-ui/core');
+var _core = require("@material-ui/core");
 
-var _components = require('../components');
+var _components = require("../components");
 
 /**
  * Default data for the `MaterialTable.components` attribute
@@ -32,4 +32,4 @@ var _default = {
   SummaryRow: _components.MTableSummaryRow,
   Toolbar: _components.MTableToolbar
 };
-exports['default'] = _default;
+exports["default"] = _default;

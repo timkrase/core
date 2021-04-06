@@ -1,124 +1,120 @@
-'use strict';
+"use strict";
 
-var _interopRequireDefault = require('@babel/runtime/helpers/interopRequireDefault');
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, 'MTableAction', {
+Object.defineProperty(exports, "MTableAction", {
   enumerable: true,
   get: function get() {
     return _components.MTableAction;
   }
 });
-Object.defineProperty(exports, 'MTableActions', {
+Object.defineProperty(exports, "MTableActions", {
   enumerable: true,
   get: function get() {
     return _components.MTableActions;
   }
 });
-Object.defineProperty(exports, 'MTableBody', {
+Object.defineProperty(exports, "MTableBody", {
   enumerable: true,
   get: function get() {
     return _components.MTableBody;
   }
 });
-Object.defineProperty(exports, 'MTableBodyRow', {
+Object.defineProperty(exports, "MTableBodyRow", {
   enumerable: true,
   get: function get() {
     return _components.MTableBodyRow;
   }
 });
-Object.defineProperty(exports, 'MTableCell', {
+Object.defineProperty(exports, "MTableCell", {
   enumerable: true,
   get: function get() {
     return _components.MTableCell;
   }
 });
-Object.defineProperty(exports, 'MTableEditCell', {
+Object.defineProperty(exports, "MTableEditCell", {
   enumerable: true,
   get: function get() {
     return _components.MTableEditCell;
   }
 });
-Object.defineProperty(exports, 'MTableEditField', {
+Object.defineProperty(exports, "MTableEditField", {
   enumerable: true,
   get: function get() {
     return _components.MTableEditField;
   }
 });
-Object.defineProperty(exports, 'MTableEditRow', {
+Object.defineProperty(exports, "MTableEditRow", {
   enumerable: true,
   get: function get() {
     return _components.MTableEditRow;
   }
 });
-Object.defineProperty(exports, 'MTableFilterRow', {
+Object.defineProperty(exports, "MTableFilterRow", {
   enumerable: true,
   get: function get() {
     return _components.MTableFilterRow;
   }
 });
-Object.defineProperty(exports, 'MTableGroupRow', {
+Object.defineProperty(exports, "MTableGroupRow", {
   enumerable: true,
   get: function get() {
     return _components.MTableGroupRow;
   }
 });
-Object.defineProperty(exports, 'MTableGroupbar', {
+Object.defineProperty(exports, "MTableGroupbar", {
   enumerable: true,
   get: function get() {
     return _components.MTableGroupbar;
   }
 });
-Object.defineProperty(exports, 'MTableHeader', {
+Object.defineProperty(exports, "MTableHeader", {
   enumerable: true,
   get: function get() {
     return _components.MTableHeader;
   }
 });
-Object.defineProperty(exports, 'MTablePagination', {
+Object.defineProperty(exports, "MTablePagination", {
   enumerable: true,
   get: function get() {
     return _components.MTablePagination;
   }
 });
-Object.defineProperty(exports, 'MTableSteppedPagination', {
+Object.defineProperty(exports, "MTableSteppedPagination", {
   enumerable: true,
   get: function get() {
     return _components.MTableSteppedPagination;
   }
 });
-Object.defineProperty(exports, 'MTableToolbar', {
+Object.defineProperty(exports, "MTableToolbar", {
   enumerable: true,
   get: function get() {
     return _components.MTableToolbar;
   }
 });
-exports['default'] = void 0;
+exports["default"] = void 0;
 
-var _extends2 = _interopRequireDefault(
-  require('@babel/runtime/helpers/extends')
-);
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
-require('./utils/polyfill');
+require("./utils/polyfill");
 
-var _react = _interopRequireDefault(require('react'));
+var _react = _interopRequireDefault(require("react"));
 
-var _defaults = require('./defaults');
+var _defaults = require("./defaults");
 
-var _propTypes = require('./prop-types');
+var _propTypes = require("./prop-types");
 
-var _materialTable = _interopRequireDefault(require('./material-table'));
+var _materialTable = _interopRequireDefault(require("./material-table"));
 
-var _withStyles = _interopRequireDefault(
-  require('@material-ui/core/styles/withStyles')
-);
+var _withStyles = _interopRequireDefault(require("@material-ui/core/styles/withStyles"));
 
-var _components = require('./components');
+var _components = require("./components");
 
-_materialTable['default'].defaultProps = _defaults.defaultProps;
-_materialTable['default'].propTypes = _propTypes.propTypes;
+_materialTable["default"].defaultProps = _defaults.defaultProps;
+_materialTable["default"].propTypes = _propTypes.propTypes;
 
 var styles = function styles(theme) {
   return {
@@ -138,15 +134,12 @@ var styles = function styles(theme) {
   };
 };
 
-var _default = (0, _withStyles['default'])(styles, {
+var _default = (0, _withStyles["default"])(styles, {
   withTheme: true
 })(function (props) {
-  return /*#__PURE__*/ _react['default'].createElement(
-    _materialTable['default'],
-    (0, _extends2['default'])({}, props, {
-      ref: props.tableRef
-    })
-  );
+  return /*#__PURE__*/_react["default"].createElement(_materialTable["default"], (0, _extends2["default"])({}, props, {
+    ref: props.tableRef
+  }));
 });
 
-exports['default'] = _default;
+exports["default"] = _default;

@@ -1,28 +1,26 @@
-'use strict';
+"use strict";
 
-var _interopRequireDefault = require('@babel/runtime/helpers/interopRequireDefault');
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports['default'] = void 0;
+exports["default"] = void 0;
 
-var _extends2 = _interopRequireDefault(
-  require('@babel/runtime/helpers/extends')
-);
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
-var _react = _interopRequireDefault(require('react'));
+var _react = _interopRequireDefault(require("react"));
 
-var _core = require('@material-ui/core');
+var _core = require("@material-ui/core");
 
 function BooleanFilter(_ref) {
   var forwardedRef = _ref.forwardedRef,
-    columnDef = _ref.columnDef,
-    onFilterChanged = _ref.onFilterChanged;
-  return /*#__PURE__*/ _react['default'].createElement(_core.Checkbox, {
+      columnDef = _ref.columnDef,
+      onFilterChanged = _ref.onFilterChanged;
+  return /*#__PURE__*/_react["default"].createElement(_core.Checkbox, {
     ref: forwardedRef,
     inputProps: {
-      'aria-label': 'Filter of '.concat(columnDef.title)
+      'aria-label': "Filter of ".concat(columnDef.title)
     },
     indeterminate: columnDef.tableData.filterValue === undefined,
     checked: columnDef.tableData.filterValue === 'checked',
@@ -40,15 +38,10 @@ function BooleanFilter(_ref) {
   });
 }
 
-var _default = /*#__PURE__*/ _react['default'].forwardRef(
-  function BooleanFilterRef(props, ref) {
-    return /*#__PURE__*/ _react['default'].createElement(
-      BooleanFilter,
-      (0, _extends2['default'])({}, props, {
-        forwardedRef: ref
-      })
-    );
-  }
-);
+var _default = /*#__PURE__*/_react["default"].forwardRef(function BooleanFilterRef(props, ref) {
+  return /*#__PURE__*/_react["default"].createElement(BooleanFilter, (0, _extends2["default"])({}, props, {
+    forwardedRef: ref
+  }));
+});
 
-exports['default'] = _default;
+exports["default"] = _default;

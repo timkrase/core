@@ -9,8 +9,12 @@ export const rowActions = (props) =>
     (a) => a.position === 'row' || typeof a === 'function' || a.action
   );
 
-export const actionsColumnWidth = (props) =>
-  Math.max(
+export const actionsColumnWidth = (props) => {
+  if (!Array.isArray(props.data)) {
+      return 0;
+  }
+
+  return Math.max(
     props.data.map((dataEntry) =>
       props.actions.reduce((actionCount, a) => {
         if (!a.action) {
@@ -20,7 +24,7 @@ export const actionsColumnWidth = (props) =>
         return actionCount + (a.action(dataEntry).position === 'row' ? 1 : 0);
       }, 0)
     )
-  ) * baseIconSize(props);
+  ) * baseIconSize(props)};
 
 export const hasAtLeastOneRowAction = (props) => {
   return props.actions && rowActions(props).length > 0;
